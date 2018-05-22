@@ -1,0 +1,34 @@
+@import "./svg";
+
+@function get-ratio-size($size, $base-size) {
+  @return $size / $base-size;
+}
+
+@mixin ratio-size($orgWidth, $orgHeight, $size, $isWidth: true) {
+  @if ($isWidth) {
+    $ratio: get-ratio-size($orgHeight, $orgWidth);
+    width: $size + px;
+    height: ($size * $ratio) + px;
+  }
+  else {
+    $ratio: get-ratio-size($orgWidth, $orgHeight);
+    width: ($size * $ratio) + px;
+    height: $size + px;
+  }
+}
+
+@mixin svg-size($map, $size, $isWidth: true) {
+  $width: map-get($map, width);
+  $height: map-get($map, height);
+  @include ratio-size($width, $height, $size, $isWidth);
+}
+
+.svg-1 {
+  @include svg-size($svg-rect, 100);
+}
+.svg-2 {
+  @include svg-size($svg-circle, 100);
+}
+.svg-3 {
+  @include svg-size($svg-star, 100);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "demo-inline-svg-sprite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "task-svg-sprite.js",
+  "scripts": {
+    "svg": "node task-svg-sprite.js",
+    "build": "node-sass sass/style.scss dist/style.css && ejs-cli -b ejs/ -f index.ejs -o dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syuji-higa/demo-inline-svg-sprite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syuji-higa/demo-inline-svg-sprite/issues"
+  },
+  "homepage": "https://github.com/syuji-higa/demo-inline-svg-sprite#readme",
+  "devDependencies": {
+    "ejs-cli": "^2.0.1",
+    "glob": "^7.1.2",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.9.0"
+  }
+}
